@@ -31,7 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'network',
+
+    # Add crispy forms and cirspy bootstrap5 apps 
+    'crispy_forms',
+    'crispy_bootstrap5',
+
+    # Add user app and network app
+    'users.apps.UsersConfig',
+    'network.apps.NetworkConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,3 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+

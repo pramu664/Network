@@ -1,0 +1,52 @@
+<!-- Extends this page using network app layout page -->
+{% extends 'network/layout.html' %}
+
+<!-- load the cirspy tags for styling forms -->
+{% load crispy_forms_tags %}
+
+<!-- Add following code for to the body block -->
+{% block body %}
+
+    <!-- Add a div and style the div as content-section  -->
+    <div class="content-section">
+
+        <!-- Add a form and method of the form is post -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Add a fieldset and style should be form group -->
+            <fieldset class="form-group">
+
+                <!-- Add a legend. add a bottom border. margin to the bottom is 4  -->
+                <legend class="border-bottom mb-4">Join Today</legend>
+
+                <!-- Plug the register form and filter the form using crispy tags -->
+                {{ register_form|crispy }}
+
+            </fieldset>
+
+            <!-- Add a div style as form-group -->
+            <div class="form-group">
+
+                <!-- Add a button that displays 'submit'. Style the button with outline info. type is submit -->
+                <button class="btn btn-outline-info" type="submit">submit</button>
+
+            </div>
+
+        </form>
+
+        <!-- Add a div. Add a border to top. padding top 3 -->
+        <div class="border-top pt-3">
+
+        <!-- Add a small tag. Text inside tag should not be stand out from rest.  -->
+            <small class="text-muted">
+
+                <!-- Content followed by link to log in page -->
+                Already Have an Account? <a class="ml-2" href="#">Sign In</a>
+            </small>
+        </div>
+    </div>
+
+{% endblock %}
+
+
