@@ -37,3 +37,5 @@ def register(request):
     # if the method is Get, render the register page with empty form
     return render (request, "users/register.html", {"register_form": UserRegisterForm()})
 
+def profile(request):
+    return render(request, 'users/profile.html')
